@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Time_Table_Management_System
 {
-    public partial class Form1 : Form
+    public partial class TimeTableManagementSystem : Form
     {
-        public Form1()
+        public TimeTableManagementSystem()
         {
             InitializeComponent();
             customizeDesign();
@@ -89,6 +89,7 @@ namespace Time_Table_Management_System
         private void button7_Click(object sender, EventArgs e)
         {
             //Your code..
+            openChildForm(new TagsForm());
             hideSubMenu();
         }
 
@@ -162,7 +163,7 @@ namespace Time_Table_Management_System
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
             //Your code..
-            openChildForm(new ViewDetailsForm());
+            openChildForm(new ViewDetailsFormWeekday());
             hideSubMenu();
         }
 

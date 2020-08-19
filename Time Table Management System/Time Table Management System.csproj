@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,6 +71,15 @@
     <Compile Include="BuildingsForm.Designer.cs">
       <DependentUpon>BuildingsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\BuildingsClass.cs" />
+    <Compile Include="Classes\GroupNumbersClass.cs" />
+    <Compile Include="Classes\LecturerClass.cs" />
+    <Compile Include="Classes\ProgrammeClass.cs" />
+    <Compile Include="Classes\RoomsClass.cs" />
+    <Compile Include="Classes\SubgroupNumberClass.cs" />
+    <Compile Include="Classes\SubjectClass.cs" />
+    <Compile Include="Classes\TagClass.cs" />
+    <Compile Include="Classes\YearandSemesterClass.cs" />
     <Compile Include="ConsecutiveSessionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,11 +98,11 @@
     <Compile Include="EditDetailsForm.Designer.cs">
       <DependentUpon>EditDetailsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="TimeTableManagementSystem.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="TimeTableManagementSystem.Designer.cs">
+      <DependentUpon>TimeTableManagementSystem.cs</DependentUpon>
     </Compile>
     <Compile Include="GenerateGroupIDForm.cs">
       <SubType>Form</SubType>
@@ -202,11 +212,17 @@
     <Compile Include="UnavailableRoomsForm.Designer.cs">
       <DependentUpon>UnavailableRoomsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewDetailsForm.cs">
+    <Compile Include="ViewDetailsFormWeekday.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewDetailsForm.Designer.cs">
-      <DependentUpon>ViewDetailsForm.cs</DependentUpon>
+    <Compile Include="ViewDetailsFormWeekday.Designer.cs">
+      <DependentUpon>ViewDetailsFormWeekday.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewDetailsWeekend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewDetailsWeekend.Designer.cs">
+      <DependentUpon>ViewDetailsWeekend.cs</DependentUpon>
     </Compile>
     <Compile Include="WeekdayDetailsForm.cs">
       <SubType>Form</SubType>
@@ -261,8 +277,8 @@
     <EmbeddedResource Include="EditDetailsForm.resx">
       <DependentUpon>EditDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="TimeTableManagementSystem.resx">
+      <DependentUpon>TimeTableManagementSystem.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GenerateGroupIDForm.resx">
       <DependentUpon>GenerateGroupIDForm.cs</DependentUpon>
@@ -318,8 +334,11 @@
     <EmbeddedResource Include="UnavailableRoomsForm.resx">
       <DependentUpon>UnavailableRoomsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewDetailsForm.resx">
-      <DependentUpon>ViewDetailsForm.cs</DependentUpon>
+    <EmbeddedResource Include="ViewDetailsFormWeekday.resx">
+      <DependentUpon>ViewDetailsFormWeekday.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewDetailsWeekend.resx">
+      <DependentUpon>ViewDetailsWeekend.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekdayDetailsForm.resx">
       <DependentUpon>WeekdayDetailsForm.cs</DependentUpon>

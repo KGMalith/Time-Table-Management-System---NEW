@@ -1,6 +1,6 @@
 ﻿namespace Time_Table_Management_System
 {
-    partial class Form1
+    partial class TimeTableManagementSystem
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeTableManagementSystem));
             this.panelSideMenu = new System.Windows.Forms.Panel();
             this.panelGenerateTimeTableSubmenu = new System.Windows.Forms.Panel();
             this.btnWeekEndTimeTable = new System.Windows.Forms.Button();
