@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Time_Table_Management_System.Classes;
 
 namespace Time_Table_Management_System
 {
@@ -16,7 +17,7 @@ namespace Time_Table_Management_System
         {
             InitializeComponent();
         }
-
+        WeekDayDetailsClass c = new WeekDayDetailsClass();
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
@@ -59,7 +60,35 @@ namespace Time_Table_Management_System
 
         private void WeekdayDetailsAdd_Click(object sender, EventArgs e)
         {
+            //get values from input fields
+            c.NumberOfWorkingDays = int.Parse(comboBoxNoOfWorkingDays.Text);
+            c.IsMondayWorking = checkBoxMonday.Checked;
+            c.IsTuesdayWorking = checkBoxTuesday.Checked;
+            c.IsWednesdayWorking = checkBoxWednesday.Checked;
+            c.IsThursdayWorking = checkBoxThursday.Checked;
+            c.IsFridayWorking = checkBoxFriday.Checked;
+            c.WorkingTimePerDayHours = int.Parse(comboBoxWorkingTimeHours.Text);
+            c.WorkingTimePerDayMinutes = int.Parse(comboBoxWorkingTimeMinutes.Text);
+            if (radioButtonOneHour.Checked)
+            {
+                c.TimeSlots = radioButtonOneHour.Checked;
+            }
+            else if (radioButtonThirtyMinutes.Checked)
+            {
+                c.TimeSlots = radioButtonThirtyMinutes.Checked;
+            }
 
+            //Insert data into database using method in class
+            bool success = c.Insert(c);
+
+            if (success == true)
+            {
+                MessageBox.Show("New Programme Inserted");
+            }
+            else
+            {
+                MessageBox.Show("Faild to Insert Programme");
+            }
         }
     }
 }

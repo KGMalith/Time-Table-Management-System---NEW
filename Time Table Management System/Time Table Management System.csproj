@@ -79,6 +79,7 @@
     <Compile Include="Classes\SubgroupNumberClass.cs" />
     <Compile Include="Classes\SubjectClass.cs" />
     <Compile Include="Classes\TagClass.cs" />
+    <Compile Include="Classes\WeekDayDetailsClass.cs" />
     <Compile Include="Classes\YearandSemesterClass.cs" />
     <Compile Include="ConsecutiveSessionsForm.cs">
       <SubType>Form</SubType>
