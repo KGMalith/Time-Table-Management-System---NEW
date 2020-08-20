@@ -16,5 +16,10 @@ namespace Time_Table_Management_System
         {
             InitializeComponent();
         }
+
+        private void dataGridViewRoomDetails_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -12,7 +12,7 @@ namespace Time_Table_Management_System.Classes
     class SubgroupNumberClass
     {
         public int SubGroupID { get; set; }
-        public int SubGroupNumber { get; set; }
+        public string SubGroupNumber { get; set; }
 
         //Databse Connection
         static string constring = ConfigurationManager.ConnectionStrings["con"].ConnectionString;

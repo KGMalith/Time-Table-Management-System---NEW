@@ -12,7 +12,7 @@ namespace Time_Table_Management_System.Classes
     class GroupNumbersClass
     {
         public int GroupNumbersID { get; set; }
-        public int GroupNumbers { get; set; }
+        public string GroupNumbers { get; set; }
 
         //Databse Connection
         static string constring = ConfigurationManager.ConnectionStrings["con"].ConnectionString;

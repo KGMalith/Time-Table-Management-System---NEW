@@ -28,7 +28,7 @@ namespace Time_Table_Management_System
         private void btnAddGroupNumber_Click(object sender, EventArgs e)
         {
             //get values from input fields
-            c.GroupNumbers = int.Parse(textBoxGroupNumber.Text);
+            c.GroupNumbers = textBoxGroupNumber.Text;
 
             //Insert data into database using method in class
             bool success = c.Insert(c);
@@ -50,7 +50,7 @@ namespace Time_Table_Management_System
         {
             //get values from input fields
             c.GroupNumbersID = Convert.ToInt32(textBoxGroupNumberID.Text);
-            c.GroupNumbers = int.Parse(textBoxGroupNumber.Text);
+            c.GroupNumbers = textBoxGroupNumber.Text;
 
             bool success = c.Update(c);
             if (success == true)

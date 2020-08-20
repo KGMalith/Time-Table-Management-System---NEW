@@ -28,7 +28,7 @@ namespace Time_Table_Management_System
         private void btnAddSubGroupNumber_Click(object sender, EventArgs e)
         {
             //get values from input fields
-            c.SubGroupNumber = int.Parse(textBoxSubgroupNumber.Text);
+            c.SubGroupNumber = textBoxSubgroupNumber.Text;
 
             //Insert data into database using method in class
             bool success = c.Insert(c);
@@ -50,7 +50,7 @@ namespace Time_Table_Management_System
         {
             //get values from input fields
             c.SubGroupID = Convert.ToInt32(textBoxSubgroupID.Text);
-            c.SubGroupNumber = int.Parse(textBoxSubgroupNumber.Text);
+            c.SubGroupNumber = textBoxSubgroupNumber.Text;
 
             bool success = c.Update(c);
             if (success == true)
