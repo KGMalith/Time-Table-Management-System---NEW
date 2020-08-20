@@ -163,7 +163,7 @@ namespace Time_Table_Management_System
         private void btnViewDetails_Click(object sender, EventArgs e)
         {
             //Your code..
-            openChildForm(new ViewDetailsFormWeekday());
+            openChildForm(new ViewDetailsForm());
             hideSubMenu();
         }
 

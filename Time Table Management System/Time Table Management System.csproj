@@ -80,6 +80,7 @@
     <Compile Include="Classes\SubjectClass.cs" />
     <Compile Include="Classes\TagClass.cs" />
     <Compile Include="Classes\WeekDayDetailsClass.cs" />
+    <Compile Include="Classes\WeekendClass.cs" />
     <Compile Include="Classes\YearandSemesterClass.cs" />
     <Compile Include="ConsecutiveSessionsForm.cs">
       <SubType>Form</SubType>
@@ -213,17 +214,11 @@
     <Compile Include="UnavailableRoomsForm.Designer.cs">
       <DependentUpon>UnavailableRoomsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewDetailsFormWeekday.cs">
+    <Compile Include="ViewDetailsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewDetailsFormWeekday.Designer.cs">
-      <DependentUpon>ViewDetailsFormWeekday.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ViewDetailsWeekend.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ViewDetailsWeekend.Designer.cs">
-      <DependentUpon>ViewDetailsWeekend.cs</DependentUpon>
+    <Compile Include="ViewDetailsForm.Designer.cs">
+      <DependentUpon>ViewDetailsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WeekdayDetailsForm.cs">
       <SubType>Form</SubType>
@@ -335,11 +330,8 @@
     <EmbeddedResource Include="UnavailableRoomsForm.resx">
       <DependentUpon>UnavailableRoomsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewDetailsFormWeekday.resx">
-      <DependentUpon>ViewDetailsFormWeekday.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ViewDetailsWeekend.resx">
-      <DependentUpon>ViewDetailsWeekend.cs</DependentUpon>
+    <EmbeddedResource Include="ViewDetailsForm.resx">
+      <DependentUpon>ViewDetailsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WeekdayDetailsForm.resx">
       <DependentUpon>WeekdayDetailsForm.cs</DependentUpon>

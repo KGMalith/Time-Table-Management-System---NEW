@@ -271,6 +271,7 @@
             this.WeekendDetailsAdd.TabIndex = 13;
             this.WeekendDetailsAdd.Text = "Add";
             this.WeekendDetailsAdd.UseVisualStyleBackColor = false;
+            this.WeekendDetailsAdd.Click += new System.EventHandler(this.WeekendDetailsAdd_Click);
             // 
             // WeekendDetailsForm
             // 

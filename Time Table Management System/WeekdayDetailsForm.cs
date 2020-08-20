@@ -71,11 +71,11 @@ namespace Time_Table_Management_System
             c.WorkingTimePerDayMinutes = int.Parse(comboBoxWorkingTimeMinutes.Text);
             if (radioButtonOneHour.Checked)
             {
-                c.TimeSlots = radioButtonOneHour.Checked;
+                c.TimeSlotsOneHour = radioButtonOneHour.Checked;
             }
             else if (radioButtonThirtyMinutes.Checked)
             {
-                c.TimeSlots = radioButtonThirtyMinutes.Checked;
+                c.TimeSlotsThirtyMin = radioButtonThirtyMinutes.Checked;
             }
 
             //Insert data into database using method in class
