@@ -228,6 +228,9 @@
             // 
             // dataGridViewLecturerDetails
             // 
+            this.dataGridViewLecturerDetails.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewLecturerDetails.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewLecturerDetails.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewLecturerDetails.Location = new System.Drawing.Point(210, 169);
@@ -240,6 +243,7 @@
             // 
             // btnAddLecturer
             // 
+            this.btnAddLecturer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAddLecturer.BackColor = System.Drawing.Color.LightGreen;
             this.btnAddLecturer.Location = new System.Drawing.Point(284, 564);
             this.btnAddLecturer.Name = "btnAddLecturer";
@@ -251,6 +255,7 @@
             // 
             // btnUpdateLecturer
             // 
+            this.btnUpdateLecturer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnUpdateLecturer.BackColor = System.Drawing.Color.Khaki;
             this.btnUpdateLecturer.Location = new System.Drawing.Point(381, 564);
             this.btnUpdateLecturer.Name = "btnUpdateLecturer";
@@ -262,6 +267,7 @@
             // 
             // btnDeleteecturer
             // 
+            this.btnDeleteecturer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDeleteecturer.BackColor = System.Drawing.Color.OrangeRed;
             this.btnDeleteecturer.Location = new System.Drawing.Point(479, 564);
             this.btnDeleteecturer.Name = "btnDeleteecturer";

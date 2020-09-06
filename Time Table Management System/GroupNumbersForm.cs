@@ -27,68 +27,96 @@ namespace Time_Table_Management_System
 
         private void btnAddGroupNumber_Click(object sender, EventArgs e)
         {
-            //get values from input fields
-            c.GroupNumbers = textBoxGroupNumber.Text;
+            string value = textBoxGroupNumber.Text;
 
-            //Insert data into database using method in class
-            bool success = c.Insert(c);
-
-            if (success == true)
+            if(value == "")
             {
-                MessageBox.Show("New Group Number Inserted");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewGroupNumber.DataSource = dt;
+                MessageBox.Show("Empty Fields !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Faild to Insert GroupNumber");
-            }
-        }
+                //get values from input fields
+                c.GroupNumbers = value;
 
-        private void btnUpdateGroupNumber_Click(object sender, EventArgs e)
-        {
-            //get values from input fields
-            c.GroupNumbersID = Convert.ToInt32(textBoxGroupNumberID.Text);
-            c.GroupNumbers = textBoxGroupNumber.Text;
-
-            bool success = c.Update(c);
-            if (success == true)
-            {
-                MessageBox.Show("Group Number Details Updated Successfully");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewGroupNumber.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("Faild to Update Group Number Details");
-            }
-        }
-
-        private void btnDeleteGroupNumber_Click(object sender, EventArgs e)
-        {
-            c.GroupNumbersID = Convert.ToInt32(textBoxGroupNumberID.Text);
-            if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                bool success = c.Delete(c);
+                //Insert data into database using method in class
+                bool success = c.Insert(c);
 
                 if (success == true)
                 {
-                    MessageBox.Show("Group Number Details Deleted Successfully");
+                    MessageBox.Show("New Group Number Inserted");
                     //load data on data gridview
                     DataTable dt = c.Select();
                     dataGridViewGroupNumber.DataSource = dt;
                 }
                 else
                 {
-                    MessageBox.Show("Faild to Delete Group Number Details");
+                    MessageBox.Show("Faild to Insert GroupNumber");
                 }
+            }
+          
+        }
+
+        private void btnUpdateGroupNumber_Click(object sender, EventArgs e)
+        {
+            string groupNoID = textBoxGroupNumberID.Text;
+            if (groupNoID == "")
+            {
+                MessageBox.Show("Item Not Selected !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //get values from input fields
+                c.GroupNumbersID = Convert.ToInt32(groupNoID);
+                c.GroupNumbers = textBoxGroupNumber.Text;
+
+                bool success = c.Update(c);
+                if (success == true)
+                {
+                    MessageBox.Show("Group Number Details Updated Successfully");
+                    //load data on data gridview
+                    DataTable dt = c.Select();
+                    dataGridViewGroupNumber.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Faild to Update Group Number Details");
+                }
             }
+            
+        }
+
+        private void btnDeleteGroupNumber_Click(object sender, EventArgs e)
+        {
+            string groupNoID = textBoxGroupNumberID.Text;
+            if (groupNoID == "")
+            {
+                MessageBox.Show("Item Not Selected !", "ERROR");
+            }
+            else
+            {
+                c.GroupNumbersID = Convert.ToInt32(groupNoID);
+                if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool success = c.Delete(c);
+
+                    if (success == true)
+                    {
+                        MessageBox.Show("Group Number Details Deleted Successfully");
+                        //load data on data gridview
+                        DataTable dt = c.Select();
+                        dataGridViewGroupNumber.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faild to Delete Group Number Details");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+           
         }
 
         private void dataGridViewGroupNumber_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -97,6 +125,16 @@ namespace Time_Table_Management_System
             int rowIndex = e.RowIndex;
             textBoxGroupNumberID.Text = dataGridViewGroupNumber.Rows[rowIndex].Cells[0].Value.ToString();
             textBoxGroupNumber.Text = dataGridViewGroupNumber.Rows[rowIndex].Cells[1].Value.ToString();
+        }
+
+        private void textBoxGroupNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if(!Char.IsDigit(ch) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+                MessageBox.Show("Enter Numbers Only!", "ERROR");
+            }
         }
     }
 }

@@ -28,25 +28,35 @@ namespace Time_Table_Management_System
 
         private void btnAddRoom_Click(object sender, EventArgs e)
         {
-            //get values from input fields
-            c.BuildingName = comboBoxBuildingName.Text;
-            c.RoomName = textBoxRoomName.Text;
-
-            //Insert data into database using method in class
-            bool success = c.Insert(c);
-
-            if (success == true)
+            string bname = comboBoxBuildingName.Text;
+            string rname = textBoxRoomName.Text;
+            if (bname == "" || rname == "")
             {
-                MessageBox.Show("New Room Inserted");
+                MessageBox.Show("Empty Fields !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Faild to Insert Room");
-            }
+                //get values from input fields
+                c.BuildingName = bname;
+                c.RoomName = rname;
 
-            //load data on data gridview
-            DataTable dt = c.Select();
-            dataGridViewRoomDetails.DataSource = dt;
+                //Insert data into database using method in class
+                bool success = c.Insert(c);
+
+                if (success == true)
+                {
+                    MessageBox.Show("New Room Inserted");
+                }
+                else
+                {
+                    MessageBox.Show("Faild to Insert Room");
+                }
+
+                //load data on data gridview
+                DataTable dt = c.Select();
+                dataGridViewRoomDetails.DataSource = dt;
+            }
+           
         }
 
         private void RoomsForm_Load(object sender, EventArgs e)
@@ -93,48 +103,66 @@ namespace Time_Table_Management_System
 
         private void btnUpdateRoom_Click(object sender, EventArgs e)
         {
-            //get values from input fields
-            c.RoomID = Convert.ToInt32(textBoxRoomID.Text);
-            c.BuildingName = comboBoxBuildingName.Text;
-            c.RoomName = textBoxRoomName.Text;
-
-            bool success = c.Update(c);
-            if (success == true)
+            string rid = textBoxRoomID.Text;
+            if (rid == "")
             {
-                MessageBox.Show("Building Name Updated Successfully");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewRoomDetails.DataSource = dt;
+                MessageBox.Show("Item Not Selected !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Faild to Update Building");
-            }
-        }
+                //get values from input fields
+                c.RoomID = Convert.ToInt32(rid);
+                c.BuildingName = comboBoxBuildingName.Text;
+                c.RoomName = textBoxRoomName.Text;
 
-        private void btnDeleteRoom_Click(object sender, EventArgs e)
-        {
-            c.RoomID = Convert.ToInt32(textBoxRoomID.Text);
-            if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                bool success = c.Delete(c);
-
+                bool success = c.Update(c);
                 if (success == true)
                 {
-                    MessageBox.Show("Room Name Deleted Successfully");
+                    MessageBox.Show("Building Name Updated Successfully");
                     //load data on data gridview
                     DataTable dt = c.Select();
                     dataGridViewRoomDetails.DataSource = dt;
                 }
                 else
                 {
-                    MessageBox.Show("Faild to Delete Room");
+                    MessageBox.Show("Faild to Update Building");
                 }
+            }
+           
+        }
+
+        private void btnDeleteRoom_Click(object sender, EventArgs e)
+        {
+            string rid = textBoxRoomID.Text;
+            if (rid == "")
+            {
+                MessageBox.Show("Item Not Selected !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                c.RoomID = Convert.ToInt32(rid);
+                if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool success = c.Delete(c);
+
+                    if (success == true)
+                    {
+                        MessageBox.Show("Room Name Deleted Successfully");
+                        //load data on data gridview
+                        DataTable dt = c.Select();
+                        dataGridViewRoomDetails.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faild to Delete Room");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+           
         }
     }
 }

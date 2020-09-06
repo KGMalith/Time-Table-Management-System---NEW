@@ -32,11 +32,13 @@ namespace Time_Table_Management_System
             checkBoxViewWednesday.Checked = false;
             checkBoxViewThursday.Checked = false;
             checkBoxViewFriday.Checked = false;
+            checkBoxViewSaturday.Checked = false;
+            checkBoxViewSunday.Checked = false;
             radioButtonViewOneHour.Checked = false;
             radioButtonViewThirtyMinutes.Checked = false;
             conn.Open();
 
-            string sql2 = "SELECT * FROM Table_WeekendDetails WHERE WeekendDetailsID = 1";
+            string sql2 = "SELECT * FROM Table_WeekendDetails WHERE WeekendDetailsID = 5";
             SqlCommand scmd = new SqlCommand(sql2, conn);
             SqlDataReader dataR = scmd.ExecuteReader();
             if (dataR.Read())
@@ -84,6 +86,8 @@ namespace Time_Table_Management_System
             checkBoxViewWednesday.Checked = false;
             checkBoxViewThursday.Checked = false;
             checkBoxViewFriday.Checked = false;
+            checkBoxViewSaturday.Checked = false;
+            checkBoxViewSunday.Checked = false;
             radioButtonViewOneHour.Checked = false;
             radioButtonViewThirtyMinutes.Checked = false;
             conn.Open();
@@ -94,7 +98,7 @@ namespace Time_Table_Management_System
             //{
             //    int v = int.Parse(dr["WeekdayDetailsID"].ToString());
 
-                string sql2 = "SELECT * FROM Table_WeekDayDetails WHERE WeekdayDetailsID = 3";
+                string sql2 = "SELECT * FROM Table_WeekDayDetails WHERE WeekdayDetailsID = 8";
                 SqlCommand scmd = new SqlCommand(sql2, conn);
                 SqlDataReader dataR = scmd.ExecuteReader();
                 if (dataR.Read())

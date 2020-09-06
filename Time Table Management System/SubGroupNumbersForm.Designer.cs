@@ -42,9 +42,12 @@
             // 
             // dataGridViewSubGroupNumber
             // 
+            this.dataGridViewSubGroupNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewSubGroupNumber.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSubGroupNumber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewSubGroupNumber.Location = new System.Drawing.Point(14, 248);
+            this.dataGridViewSubGroupNumber.Location = new System.Drawing.Point(14, 264);
             this.dataGridViewSubGroupNumber.Name = "dataGridViewSubGroupNumber";
             this.dataGridViewSubGroupNumber.RowHeadersWidth = 51;
             this.dataGridViewSubGroupNumber.RowTemplate.Height = 24;
@@ -54,6 +57,8 @@
             // 
             // textBoxSubgroupID
             // 
+            this.textBoxSubgroupID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSubgroupID.Location = new System.Drawing.Point(14, 96);
             this.textBoxSubgroupID.Name = "textBoxSubgroupID";
             this.textBoxSubgroupID.ReadOnly = true;
@@ -62,6 +67,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(11, 76);
             this.label2.Name = "label2";
@@ -72,7 +79,7 @@
             // btnDeleteSubGroupNumber
             // 
             this.btnDeleteSubGroupNumber.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnDeleteSubGroupNumber.Location = new System.Drawing.Point(226, 192);
+            this.btnDeleteSubGroupNumber.Location = new System.Drawing.Point(304, 201);
             this.btnDeleteSubGroupNumber.Name = "btnDeleteSubGroupNumber";
             this.btnDeleteSubGroupNumber.Size = new System.Drawing.Size(75, 30);
             this.btnDeleteSubGroupNumber.TabIndex = 49;
@@ -83,7 +90,7 @@
             // btnUpdateSubgroupNumber
             // 
             this.btnUpdateSubgroupNumber.BackColor = System.Drawing.Color.Khaki;
-            this.btnUpdateSubgroupNumber.Location = new System.Drawing.Point(128, 192);
+            this.btnUpdateSubgroupNumber.Location = new System.Drawing.Point(206, 201);
             this.btnUpdateSubgroupNumber.Name = "btnUpdateSubgroupNumber";
             this.btnUpdateSubgroupNumber.Size = new System.Drawing.Size(75, 30);
             this.btnUpdateSubgroupNumber.TabIndex = 48;
@@ -94,7 +101,7 @@
             // btnAddSubGroupNumber
             // 
             this.btnAddSubGroupNumber.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAddSubGroupNumber.Location = new System.Drawing.Point(31, 192);
+            this.btnAddSubGroupNumber.Location = new System.Drawing.Point(109, 201);
             this.btnAddSubGroupNumber.Name = "btnAddSubGroupNumber";
             this.btnAddSubGroupNumber.Size = new System.Drawing.Size(75, 30);
             this.btnAddSubGroupNumber.TabIndex = 47;
@@ -104,13 +111,18 @@
             // 
             // textBoxSubgroupNumber
             // 
+            this.textBoxSubgroupNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSubgroupNumber.Location = new System.Drawing.Point(14, 150);
             this.textBoxSubgroupNumber.Name = "textBoxSubgroupNumber";
             this.textBoxSubgroupNumber.Size = new System.Drawing.Size(365, 22);
             this.textBoxSubgroupNumber.TabIndex = 46;
+            this.textBoxSubgroupNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSubgroupNumber_KeyPress);
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(11, 130);
             this.label5.Name = "label5";

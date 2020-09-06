@@ -27,9 +27,18 @@ namespace Time_Table_Management_System
             //Databse Connection
             string constring = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             SqlConnection conn = new SqlConnection(constring);
+            checkBoxEditMonday.Checked = false;
+            checkBoxEditTuesday.Checked = false;
+            checkBoxEditWednesday.Checked = false;
+            checkBoxEditThursday.Checked = false;
+            checkBoxEditFriday.Checked = false;
+            checkBoxEditSaturday.Checked = false;
+            checkBoxEditSunday.Checked = false;
+            radioButtonEditOneHour.Checked = false;
+            radioButtonEditThirtyMinutes.Checked = false;
             conn.Open();
 
-            string sql2 = "SELECT * FROM Table_WeekDayDetails WHERE WeekdayDetailsID = 3";
+            string sql2 = "SELECT * FROM Table_WeekDayDetails WHERE WeekdayDetailsID = 8";
             SqlCommand scmd = new SqlCommand(sql2, conn);
             SqlDataReader dataR = scmd.ExecuteReader();
             if (dataR.Read())
@@ -86,14 +95,23 @@ namespace Time_Table_Management_System
             //Databse Connection
             string constring = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
             SqlConnection conn = new SqlConnection(constring);
+            checkBoxEditMonday.Checked = false;
+            checkBoxEditTuesday.Checked = false;
+            checkBoxEditWednesday.Checked = false;
+            checkBoxEditThursday.Checked = false;
+            checkBoxEditFriday.Checked = false;
+            checkBoxEditSaturday.Checked = false;
+            checkBoxEditSunday.Checked = false;
+            radioButtonEditOneHour.Checked = false;
+            radioButtonEditThirtyMinutes.Checked = false;
             conn.Open();
 
-            string sql2 = "SELECT * FROM Table_WeekendDetails WHERE WeekendDetailsID = 1";
+            string sql2 = "SELECT * FROM Table_WeekendDetails WHERE WeekendDetailsID = 5";
             SqlCommand scmd = new SqlCommand(sql2, conn);
             SqlDataReader dataR = scmd.ExecuteReader();
             if (dataR.Read())
             {
-
+                textBoxID.Text = dataR["WeekendDetailsID"].ToString();
                 comboBoxEditNoOfWorkingDays.Text = dataR["NumberOfWorkingDays"].ToString();
                 string checking1 = dataR["IsSaturdayWorking"].ToString();
                 string checking2 = dataR["IsSundayWorking"].ToString();
@@ -177,7 +195,7 @@ namespace Time_Table_Management_System
             }
 
             //Insert data into database using method in class
-            bool success = wd.Update(wd);
+            bool success = we.Update(we);
 
             if (success == true)
             {

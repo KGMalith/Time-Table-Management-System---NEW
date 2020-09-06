@@ -29,30 +29,46 @@ namespace Time_Table_Management_System
 
         private void btnAddSubject_Click(object sender, EventArgs e)
         {
-            //get values from input fields
-            c.SubjectOfferedYear = int.Parse(comboBoxOfferedYear.Text);
-            c.SubjectOfferedSemester = int.Parse(comboBoxOfferedSemester.Text);
-            c.SubjectName = textBoxSubjectName.Text;
-            c.SubjectCode = textBoxSubjectCode.Text;
-            c.LectureHours = int.Parse(textBoxLectureHours.Text);
-            c.TutorialHours = int.Parse(textBoxTutorialHours.Text);
-            c.LabHours = int.Parse(textBoxLabHours.Text);
-            c.EvaluationHours = int.Parse(textBoxEvaluationHours.Text);
-
-            //Insert data into database using method in class
-            bool success = c.Insert(c);
-
-            if (success == true)
+            string sofyr = comboBoxOfferedYear.Text;
+            string sofsem = comboBoxOfferedSemester.Text;
+            string subname = textBoxSubjectName.Text;
+            string subcode = textBoxSubjectCode.Text;
+            string lechors = textBoxLectureHours.Text;
+            string tutehors = textBoxTutorialHours.Text;
+            string labhors = textBoxLabHours.Text;
+            string evehors = textBoxEvaluationHours.Text;
+            if (sofyr == "" || sofsem == "" || subname == "" || subcode == "" || lechors == "" || tutehors == "" || labhors == "" || evehors == "")
             {
-                MessageBox.Show("New Subject Inserted");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewSubjectDetails.DataSource = dt;
+                MessageBox.Show("Empty Fields !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Faild to Insert Room");
+                //get values from input fields
+                c.SubjectOfferedYear = int.Parse(sofyr);
+                c.SubjectOfferedSemester = int.Parse(sofsem);
+                c.SubjectName = subname;
+                c.SubjectCode = subcode;
+                c.LectureHours = int.Parse(lechors);
+                c.TutorialHours = int.Parse(tutehors);
+                c.LabHours = int.Parse(labhors);
+                c.EvaluationHours = int.Parse(evehors);
+
+                //Insert data into database using method in class
+                bool success = c.Insert(c);
+
+                if (success == true)
+                {
+                    MessageBox.Show("New Subject Inserted");
+                    //load data on data gridview
+                    DataTable dt = c.Select();
+                    dataGridViewSubjectDetails.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Faild to Insert Room");
+                }
             }
+            
         }
 
         private void dataGridViewSubjectDetails_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -72,54 +88,72 @@ namespace Time_Table_Management_System
 
         private void btnUpdateSubject_Click(object sender, EventArgs e)
         {
-            //get values from input fields
-            c.SubjectID = Convert.ToInt32(textBoxSubjectID.Text);
-            c.SubjectOfferedYear = int.Parse(comboBoxOfferedYear.Text);
-            c.SubjectOfferedSemester = int.Parse(comboBoxOfferedSemester.Text);
-            c.SubjectName = textBoxSubjectName.Text;
-            c.SubjectCode = textBoxSubjectCode.Text;
-            c.LectureHours = int.Parse(textBoxLectureHours.Text);
-            c.TutorialHours = int.Parse(textBoxTutorialHours.Text);
-            c.LabHours = int.Parse(textBoxLabHours.Text);
-            c.EvaluationHours = int.Parse(textBoxEvaluationHours.Text);
-
-            bool success = c.Update(c);
-            if (success == true)
+            string subid = textBoxSubjectID.Text;
+            if (subid == "")
             {
-                MessageBox.Show("Subject Details Updated Successfully");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewSubjectDetails.DataSource = dt;
+                MessageBox.Show("Item Not Selected !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Faild to Update Subject Details");
-            }
-        }
+                //get values from input fields
+                c.SubjectID = Convert.ToInt32(subid);
+                c.SubjectOfferedYear = int.Parse(comboBoxOfferedYear.Text);
+                c.SubjectOfferedSemester = int.Parse(comboBoxOfferedSemester.Text);
+                c.SubjectName = textBoxSubjectName.Text;
+                c.SubjectCode = textBoxSubjectCode.Text;
+                c.LectureHours = int.Parse(textBoxLectureHours.Text);
+                c.TutorialHours = int.Parse(textBoxTutorialHours.Text);
+                c.LabHours = int.Parse(textBoxLabHours.Text);
+                c.EvaluationHours = int.Parse(textBoxEvaluationHours.Text);
 
-        private void btnDeleteSubject_Click(object sender, EventArgs e)
-        {
-            c.SubjectID = Convert.ToInt32(textBoxSubjectID.Text);
-            if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                bool success = c.Delete(c);
-
+                bool success = c.Update(c);
                 if (success == true)
                 {
-                    MessageBox.Show("Subject Details Deleted Successfully");
+                    MessageBox.Show("Subject Details Updated Successfully");
                     //load data on data gridview
                     DataTable dt = c.Select();
                     dataGridViewSubjectDetails.DataSource = dt;
                 }
                 else
                 {
-                    MessageBox.Show("Faild to Delete Subject Details");
+                    MessageBox.Show("Faild to Update Subject Details");
                 }
+            }
+           
+        }
+
+        private void btnDeleteSubject_Click(object sender, EventArgs e)
+        {
+            string subid = textBoxSubjectID.Text;
+            if (subid == "")
+            {
+                MessageBox.Show("Item Not Selected !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                c.SubjectID = Convert.ToInt32(subid);
+                if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool success = c.Delete(c);
+
+                    if (success == true)
+                    {
+                        MessageBox.Show("Subject Details Deleted Successfully");
+                        //load data on data gridview
+                        DataTable dt = c.Select();
+                        dataGridViewSubjectDetails.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faild to Delete Subject Details");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
+           
         }
     }
 }

@@ -72,10 +72,12 @@
       <DependentUpon>BuildingsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes\BuildingsClass.cs" />
+    <Compile Include="Classes\GroupIDClass.cs" />
     <Compile Include="Classes\GroupNumbersClass.cs" />
     <Compile Include="Classes\LecturerClass.cs" />
     <Compile Include="Classes\ProgrammeClass.cs" />
     <Compile Include="Classes\RoomsClass.cs" />
+    <Compile Include="Classes\SubGroupIDClass.cs" />
     <Compile Include="Classes\SubgroupNumberClass.cs" />
     <Compile Include="Classes\SubjectClass.cs" />
     <Compile Include="Classes\TagClass.cs" />

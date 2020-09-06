@@ -53,6 +53,9 @@
             // 
             // dataGridViewAcademicYearandSem
             // 
+            this.dataGridViewAcademicYearandSem.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewAcademicYearandSem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewAcademicYearandSem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAcademicYearandSem.Location = new System.Drawing.Point(12, 309);
@@ -99,6 +102,8 @@
             // 
             // textBoxYearandSemesterID
             // 
+            this.textBoxYearandSemesterID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxYearandSemesterID.Location = new System.Drawing.Point(36, 139);
             this.textBoxYearandSemesterID.Name = "textBoxYearandSemesterID";
             this.textBoxYearandSemesterID.ReadOnly = true;
@@ -107,6 +112,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(33, 119);
             this.label2.Name = "label2";
@@ -116,6 +123,8 @@
             // 
             // textBoxYearandSemester
             // 
+            this.textBoxYearandSemester.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxYearandSemester.Location = new System.Drawing.Point(36, 193);
             this.textBoxYearandSemester.Name = "textBoxYearandSemester";
             this.textBoxYearandSemester.Size = new System.Drawing.Size(365, 22);
@@ -123,6 +132,8 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(33, 173);
             this.label5.Name = "label5";

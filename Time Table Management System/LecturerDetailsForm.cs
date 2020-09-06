@@ -59,83 +59,119 @@ namespace Time_Table_Management_System
 
         private void btnAddLecturer_Click(object sender, EventArgs e)
         {
-            //get values from input fields
-            c.LecturerName = textBoxLecturerName.Text;
-            c.EmployeeID = textBoxEmployeeID.Text;
-            c.LecturerFaculty = comboBoxFaculty.Text;
-            c.LecturerDepartment = comboBoxDepartment.Text;
-            c.LecturerCenter = comboBoxCenter.Text;
-            c.LecturerBuilding = comboBoxLBuilding.Text;
-            c.LecturerLevel = comboBoxLevel.Text;
-            c.LecturerRank = textBoxRank.Text;
+            string lecName = textBoxLecturerName.Text;
+            string empID = textBoxEmployeeID.Text;
+            string faculty = comboBoxFaculty.Text;
+            string dept = comboBoxDepartment.Text;
+            string center = comboBoxCenter.Text;
+            string building = comboBoxLBuilding.Text;
+            string level = comboBoxLevel.Text;
+            string Rank = textBoxRank.Text;
 
-            //Insert data into database using method in class
-            bool success = c.Insert(c);
-
-            if (success == true)
+            if (lecName == "" || empID == "" || faculty == "" || dept == "" || center == "" || building == "" || level == "" || Rank == "")
             {
-                MessageBox.Show("New Lecture Inserted");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewLecturerDetails.DataSource = dt;
+                MessageBox.Show("Empty Fields !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Faild to Insert Room");
-            }
-        }
+                //get values from input fields
+                c.LecturerName = lecName;
+                c.EmployeeID = empID;
+                c.LecturerFaculty = faculty;
+                c.LecturerDepartment = dept;
+                c.LecturerCenter = center;
+                c.LecturerBuilding = building;
+                c.LecturerLevel = level;
+                c.LecturerRank = Rank;
 
-
-        private void btnUpdateLecturer_Click(object sender, EventArgs e)
-        {
-            //get values from input fields
-            c.LecturerID = Convert.ToInt32(textBoxLecturerID.Text);
-            c.LecturerName = textBoxLecturerName.Text;
-            c.EmployeeID = textBoxEmployeeID.Text;
-            c.LecturerFaculty = comboBoxFaculty.Text;
-            c.LecturerDepartment = comboBoxDepartment.Text;
-            c.LecturerCenter = comboBoxCenter.Text;
-            c.LecturerBuilding = comboBoxLBuilding.Text;
-            c.LecturerLevel = comboBoxLevel.Text;
-            c.LecturerRank = textBoxRank.Text;
-
-            bool success = c.Update(c);
-            if (success == true)
-            {
-                MessageBox.Show("Lecturer Details Updated Successfully");
-                //load data on data gridview
-                DataTable dt = c.Select();
-                dataGridViewLecturerDetails.DataSource = dt;
-            }
-            else
-            {
-                MessageBox.Show("Faild to Update Lecturer Details");
-            }
-        }
-
-        private void btnDeleteecturer_Click(object sender, EventArgs e)
-        {
-            c.LecturerID = Convert.ToInt32(textBoxLecturerID.Text);
-            if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                bool success = c.Delete(c);
+                //Insert data into database using method in class
+                bool success = c.Insert(c);
 
                 if (success == true)
                 {
-                    MessageBox.Show("Lecturer Details Deleted Successfully");
+                    MessageBox.Show("New Lecture Inserted");
                     //load data on data gridview
                     DataTable dt = c.Select();
                     dataGridViewLecturerDetails.DataSource = dt;
                 }
                 else
                 {
-                    MessageBox.Show("Faild to Delete Lecturer Details");
+                    MessageBox.Show("Faild to Insert Room");
                 }
+            }
+           
+        }
+
+
+        private void btnUpdateLecturer_Click(object sender, EventArgs e)
+        {
+            string lecid = textBoxLecturerID.Text;
+            if (lecid == "")
+            {
+                MessageBox.Show("Item Not Selected !", "ERROR");
             }
             else
             {
-                MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //get values from input fields
+                c.LecturerID = Convert.ToInt32(lecid);
+                c.LecturerName = textBoxLecturerName.Text;
+                c.EmployeeID = textBoxEmployeeID.Text;
+                c.LecturerFaculty = comboBoxFaculty.Text;
+                c.LecturerDepartment = comboBoxDepartment.Text;
+                c.LecturerCenter = comboBoxCenter.Text;
+                c.LecturerBuilding = comboBoxLBuilding.Text;
+                c.LecturerLevel = comboBoxLevel.Text;
+                c.LecturerRank = textBoxRank.Text;
+
+                bool success = c.Update(c);
+                if (success == true)
+                {
+                    MessageBox.Show("Lecturer Details Updated Successfully");
+                    //load data on data gridview
+                    DataTable dt = c.Select();
+                    dataGridViewLecturerDetails.DataSource = dt;
+                }
+                else
+                {
+                    MessageBox.Show("Faild to Update Lecturer Details");
+                }
             }
+            
+        }
+
+        private void btnDeleteecturer_Click(object sender, EventArgs e)
+        {
+            string lecid = textBoxLecturerID.Text;
+            if (lecid == "")
+            {
+                MessageBox.Show("Item Not Selected !", "ERROR");
+            }
+
+            else
+            {
+                c.LecturerID = Convert.ToInt32(lecid);
+                if (MessageBox.Show("Do You Want to Delete Item?", "Delete Item", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    bool success = c.Delete(c);
+
+                    if (success == true)
+                    {
+                        MessageBox.Show("Lecturer Details Deleted Successfully");
+                        //load data on data gridview
+                        DataTable dt = c.Select();
+                        dataGridViewLecturerDetails.DataSource = dt;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Faild to Delete Lecturer Details");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Item Not Deleted", "Delete Item", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+           
         }
 
         private void dataGridViewLecturerDetails_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -152,5 +188,7 @@ namespace Time_Table_Management_System
             comboBoxLevel.Text = dataGridViewLecturerDetails.Rows[rowIndex].Cells[7].Value.ToString();
             textBoxRank.Text = dataGridViewLecturerDetails.Rows[rowIndex].Cells[8].Value.ToString();
         }
+
+        
     }
 }

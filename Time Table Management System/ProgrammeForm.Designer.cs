@@ -42,9 +42,12 @@
             // 
             // dataGridViewProgrammes
             // 
+            this.dataGridViewProgrammes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridViewProgrammes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProgrammes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProgrammes.Location = new System.Drawing.Point(23, 271);
+            this.dataGridViewProgrammes.Location = new System.Drawing.Point(23, 294);
             this.dataGridViewProgrammes.Name = "dataGridViewProgrammes";
             this.dataGridViewProgrammes.RowHeadersWidth = 51;
             this.dataGridViewProgrammes.RowTemplate.Height = 24;
@@ -54,6 +57,8 @@
             // 
             // textBoxProgrammeID
             // 
+            this.textBoxProgrammeID.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxProgrammeID.Location = new System.Drawing.Point(23, 119);
             this.textBoxProgrammeID.Name = "textBoxProgrammeID";
             this.textBoxProgrammeID.ReadOnly = true;
@@ -62,6 +67,8 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(20, 99);
             this.label2.Name = "label2";
@@ -72,7 +79,7 @@
             // btnDeleteProgramme
             // 
             this.btnDeleteProgramme.BackColor = System.Drawing.Color.OrangeRed;
-            this.btnDeleteProgramme.Location = new System.Drawing.Point(235, 215);
+            this.btnDeleteProgramme.Location = new System.Drawing.Point(313, 227);
             this.btnDeleteProgramme.Name = "btnDeleteProgramme";
             this.btnDeleteProgramme.Size = new System.Drawing.Size(75, 30);
             this.btnDeleteProgramme.TabIndex = 40;
@@ -83,7 +90,7 @@
             // btnUpdateProgramme
             // 
             this.btnUpdateProgramme.BackColor = System.Drawing.Color.Khaki;
-            this.btnUpdateProgramme.Location = new System.Drawing.Point(137, 215);
+            this.btnUpdateProgramme.Location = new System.Drawing.Point(215, 227);
             this.btnUpdateProgramme.Name = "btnUpdateProgramme";
             this.btnUpdateProgramme.Size = new System.Drawing.Size(75, 30);
             this.btnUpdateProgramme.TabIndex = 39;
@@ -94,7 +101,7 @@
             // btnAddProgramme
             // 
             this.btnAddProgramme.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAddProgramme.Location = new System.Drawing.Point(40, 215);
+            this.btnAddProgramme.Location = new System.Drawing.Point(118, 227);
             this.btnAddProgramme.Name = "btnAddProgramme";
             this.btnAddProgramme.Size = new System.Drawing.Size(75, 30);
             this.btnAddProgramme.TabIndex = 38;
@@ -104,6 +111,8 @@
             // 
             // textBoxProgrammeName
             // 
+            this.textBoxProgrammeName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxProgrammeName.Location = new System.Drawing.Point(23, 173);
             this.textBoxProgrammeName.Name = "textBoxProgrammeName";
             this.textBoxProgrammeName.Size = new System.Drawing.Size(365, 22);
@@ -111,6 +120,8 @@
             // 
             // label5
             // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(20, 153);
             this.label5.Name = "label5";
